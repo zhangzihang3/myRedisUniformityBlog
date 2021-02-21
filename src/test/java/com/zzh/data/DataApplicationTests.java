@@ -1,8 +1,8 @@
 package com.zzh.data;
 
-import com.zzh.data.entity.Testdata;
-import com.zzh.data.service.TestdataService;
-import com.zzh.data.service.impl.TestdataServiceImpl;
+import com.zzh.data.entity.User;
+import com.zzh.data.mapper.UserMapper;
+import com.zzh.data.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +15,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 class DataApplicationTests {
     @Autowired
-    TestdataServiceImpl testdataService;
+    UserService userService;
     @Autowired
     RedisTemplate redisTemplate;
+    @Autowired
+    UserMapper userMapper;
 
     @Test
     public void contextLoads() {
-        System.out.println(testdataService.getById(1));
-        System.out.println("1");
+        userService.creatOptimisticOrder(1);
     }
 
     @Test

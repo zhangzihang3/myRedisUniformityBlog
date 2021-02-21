@@ -44,10 +44,10 @@ public class CodeGenerator {
 
         DataSourceConfig dsc = new DataSourceConfig();
         //配置作用的数据库
-        dsc.setUrl("jdbc:mysql://localhost:3306/testdata?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false");
+        dsc.setUrl("jdbc:mysql://localhost:3306/xiaomi?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("128215");
+        dsc.setPassword("243167ooOL");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
@@ -64,7 +64,7 @@ public class CodeGenerator {
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
         //为哪张表创建！！！！！！！！！！！！！！！！！！！！
-        strategy.setInclude("testdata");
+        strategy.setInclude("user");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
 
